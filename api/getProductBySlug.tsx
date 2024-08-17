@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
+
 
 export function useGetProductBySlug(slug: string | string[]) {
-  
-    const url=`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products?filters[slug][$eq]=${slug}&populate=*`
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products?filters[slug][$eq]=${slug}&populate=*`
     const [result, setResult] = useState(null)
     const [loading, setLoading] = useState(true)
-    const [error, setError] = useState("")
+    const [error, setError] = useState('')
 
     useEffect(() => {
         (async () => {
@@ -19,8 +19,7 @@ export function useGetProductBySlug(slug: string | string[]) {
                 setLoading(false)
             }
         })()
-    },[url])
+    }, [url])
 
-    return { result, loading, error }
-
+    return { loading, result, error }
 }

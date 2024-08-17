@@ -1,23 +1,20 @@
 import { Menu } from "lucide-react";
-import {Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import Link from "next/link";
 
 const ItemsMenuMobile = () => {
     return (
-
         <Popover>
             <PopoverTrigger>
                 <Menu />
             </PopoverTrigger>
             <PopoverContent>
-                <Link href="/category/sombreros-de-la-costa" className="block">Ruta Costera</Link>
-                <Link href="/category/sombreros-de-la-sierra" className="block">Ruta Andina</Link>
-                <Link href="/category/sombreros-de-la-amazonia" className="block">Ruta Amazónica</Link>
+                <Link href="/categories/cafe-molido" className="block">Café molido</Link>
+                <Link href="/categories/cafe-grano" className="block">Café en grano</Link>
+                <Link href="/categories/cafe-capsula" className="block">Café en cápsulas</Link>
             </PopoverContent>
         </Popover>
-        
     );
-    
 }
 
 export default ItemsMenuMobile;
